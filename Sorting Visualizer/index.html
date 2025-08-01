@@ -1,0 +1,51 @@
+<!-- Future:
+ 1.Menu Bar:where all sorts will be placed.
+ 2.New page: New page for each Sort
+ 3.IMproved Animation:to improve understanding -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <title>Sorting Visaulaizer</title>
+    <link rel="stylesheet" href="style.css" /> 
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div id="title">
+          <h1>Sorting Visulaizer</h1> 
+          <div id="menu"></div> <!---** in future all sorts in a menu_Bar-->
+        </div>
+
+        <div id="options">
+          <ul class="sorting-btns">
+            <li>
+              <button onclick="genrateArr()">Randomise Array</button> <!-- Generates new array -->
+            </li>
+            <li>
+              <button id="bubbleSort" onclick="bubbleSort()">Bubble Sort</button> <!-- Starts bubble sort -->
+            </li>
+            <li>
+              <button onclick="selectionSort()">Selection Sort</button> <!-- Starts selection sort -->
+            </li>
+            <li>
+              <button onclick="insertionSort()">Insertion Sort</button> <!-- Starts insertion sort -->
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main>
+        <div id="box"></div> <!-- Container where bars are shown -->
+      </main>
+
+      <div id="slider_box">
+        Elements: <span id="sliderVal">50</span><br /> <!-- Displays current slider value -->
+        <input type="range" id="slider" min="10" max="100" value="50" /> <!-- Slider to control number of bars -->
+      </div>
+    </div>
+
+    <script src="script.js"></script> 
+  </body>
+</html>
