@@ -1,0 +1,379 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:border-box;/*the width and height of the element include the padding and border. This prevents the element from growing larger than the specified dimensions.*/
+    overflow-x: hidden;/*hides any extra content that sticks out horizontally beyond the screen (the right or left side).*/
+}
+
+/* Note: whenever you want to use position: absolute you must use position: relative; in Parent container; */
+
+body{
+    background-color: #000;
+    color:#fff;
+}
+
+.header{
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(images/header-image.png);
+    /* The linear-gradient requires at least two color stops to define how the gradient transitions across the element. */
+    background-size: cover;
+    background-position: center;
+    padding: 10px 8%;
+    position: relative;
+}
+
+ .navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.logo{
+    width:150px;
+    cursor: pointer;
+}
+
+.options button{
+    outline:0px;
+    border:0px;
+    background-color: #db0001;
+    color: #fff;
+    padding: 7px 20px;
+    font-size: 13px;
+    border-radius: 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.options .lang-btn{
+    background-color: transparent;
+    display: inline-flex;/* flex container but want it to behave like an inline element.*/
+    align-items: center;
+    border: 1px solid white;
+    padding: 7px 20px;
+}
+
+.lang-btn img{
+    width: 10px;
+    margin-left: 10px;
+}
+
+.content{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 100px;
+    background-position: center;
+    overflow: hidden;
+}
+
+.content h1{
+    font-size: 60px;
+    line-height: 60px;/*determines the amount of space above and below each line of text*/
+    font-weight: 600;
+    max-width: 650px;/* maximum width an element can have*/
+    overflow: hidden;
+}
+
+.content h3{
+    line-height: 70px; 
+}
+
+.content p{
+    font-size: 17px;
+}
+
+.sign-in{
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.sign-in input{
+    outline: none;
+    border-radius: 4px;
+    background-color: #000;
+    flex: 1;
+    color: white;
+    border: 1px solid rgb(255, 255, 255);
+    padding:17px 30px;
+}
+.sign-in button{
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    background-color: #db0001;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    padding:17px 30px;/*First value is for top and bottom, second value is for left and right.*/
+}
+
+/* <!-- *********************************************************************************** --> */
+
+.features{
+    padding: 50px 12%;
+    font-size: 22px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+.text {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.text h1{
+    font-size: 50px;
+    font-weight: 500px;
+    line-height: 1.2;
+}
+
+.text p{
+    margin-top: 20px;
+}
+
+.tv{
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.tv img{
+    display: block;
+    width:100%;
+}
+
+/* <!-- *********************************************************************************** --> */
+
+.faq{
+    padding: 10px 12%;
+    font-size: 32px;
+    text-align: center;
+}
+
+.faq h2{
+    font-size: 40px;
+    font-weight: 500px;
+}
+
+.ques{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 950px;
+}
+
+.ques li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+
+.ques li label{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: 500;
+    background-color: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+label::after{/*The ::after pseudo-element is used with content in CSS to define what is inserted after the element */
+content: '+';
+font-size: 34px;
+position:absolute;
+right: 20px;
+transition: transform 0.5s;/*transform property will take 0.5sec to complete the animation/transition.*/
+}
+
+input[type="radio"]{/*  part selects an input element of type radio */
+    display:none;
+}
+
+.ques .ans{
+    background-color: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s, padding 0.3s;/* is used to specify the timing and duration for animating changes to the max-height and padding properties of an element.*/
+    /* The transition property is applied to .ques .ans bcz that’s the element that will animate. */
+}
+
+
+/*  when the radio button is checked, it looks for the label directly next to it   After the label, this class selector (.ans) targets the next sibling element with the class .ans.  It sets the max-height property to 600px when the radio button is checked, meaning that the .ans element can expand up to a maximum height of 600px. */
+.ques input[type="radio"]:checked +label + .ans{
+    max-height: 600px;
+    padding: 30px 20px;
+
+}
+
+/* When the radio button is checked, the ::after pseudo-element is rotated by 135 degrees, which turns the + into an "X" shape. */
+.ques input[type="radio"]:checked +label::after{
+    transform: rotate(135deg);
+}
+
+
+/* <!-- *********************************************************************************** --> */
+
+.email-box{
+    text-align: center;
+}
+.email-box .sign-in {
+    max-width:  750px;
+    margin: 20px auto 60px;
+}
+
+.email-box small{
+    font-size: 17px;
+}
+
+/* <!-- *********************************************************************************** --> */
+
+footer{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #ffffffb3;
+
+}
+footer .footer-links{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ footer p{
+    width: 100%;
+    font-weight: 100px;
+    font-size: 22px;
+    margin-bottom: 40px;
+ }
+
+ footer ul{
+    width: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+
+ }
+
+ footer ul a{
+    display: block;
+    color: #ffffffb3;
+    font-size: 15px;
+    margin-bottom: 10px;
+ }
+
+ .copyright-text{
+    color: #ffffffb3;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+
+ /* *********************************************************************************** */
+
+ /* media queries */
+
+ @media only screen and (max-width:600px){
+
+
+    .logo{
+        width: 100px;
+    }
+
+    .options button{
+        padding: 5px 10px;
+    }
+    
+    .options .lang-btn{
+        padding: 4px 8px;
+    }
+
+    .content{
+        position:unset;
+        /*removes any custom positioning (absolute, relative, fixed) makes the element behave like it’s in the default flow.*/
+        transform: none;
+        /*removes any transformations like scaling, rotating, translating, or skewing applied*/
+    }
+
+    .content h1{
+        font-size: 32px;
+    }
+
+    .sign-in{
+        font-size: 12px;
+        padding: 10px 15px;
+        /* display: fl; */
+    }
+    .sign-in input{
+        width: 80%;
+        height: 100%;
+    }
+
+    .text,.tv{
+        flex-basis: 100%;
+    }
+
+    .text h1{
+        font-size: 30px;
+    }
+
+    .text p{
+        font-size: 15px;
+    }
+
+    .row:nth-child(2), .row:nth-child(4){/*pseudo-class in CSS used to select elements based on their position among siblings in the DOM tree./use to select child of an element */
+        flex-direction: column-reverse;
+    }
+    .row:nth-child(2) .text, .row:nth-child(4) .text,
+    .row:nth-child(2) .tv, .row:nth-child(4) .tv {
+        width: 100%;
+    }
+
+    .features .row{
+        padding: 10px 0;
+    }
+
+    .faq h2{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .faq .ques{
+        font-size: 15px;
+    }
+
+    .faq  li label{
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    label::after{
+        font-size: 22px;
+    }
+
+    footer{
+        padding: 50px 10px;
+    }
+
+    footer p{
+       font-size: 16px;
+       text-align: left;
+    }
+  
+ }

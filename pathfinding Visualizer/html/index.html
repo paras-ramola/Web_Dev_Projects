@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/style.css" />
+  </head>
+  <body>
+    <!-- ******************************************************************************************** -->
+    <div class="popup">
+      <button id="cancel">
+        <img src="/images/cancel.png" height="70px" />
+      </button>
+      <div class="rules">
+        <li><span id="purple">First Left-click</span> mouse to add a Source</li>
+        <li><span id="purple">Second-Left</span> click to source.</li>
+        <li>
+          <span id="purple">Left click</span> or
+          <span id="purple">Hold left Click</span> and drag to add walls.
+        </li>
+        <li>
+          Click on <span id="purple">Add Weights </span>and
+          <span id="purple">Left click </span> to add weights anywhere you want.
+        </li>
+        <li>
+          To remove anything (source/target/wall/weights)
+          <span id="purple">Left click </span> on same desired item.
+        </li>
+      </div>
+    </div>
+
+    <!-- ******************************************************************************************** -->
+    <div class="container">
+      <header>
+        <div class="top">
+          <div id="title_box">
+            <h1 id="title">Pathfinding Algorithm</h1>
+            <div id="rect"></div>
+          </div>
+
+          <button class="btn-pink" id="clear_btn">ᑕᒪEᗩᖇ ᗷOᗩᖇᗪ</button>
+        </div>
+
+        <div class="nodes">
+          <ul>
+            <li id="start">
+              <p>
+                <img
+                  src="/images/start.png"
+                  height="25px"
+                  style="vertical-align: middle"
+                />Start Node
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="/images/target.png"
+                  height="75px"
+                  style="vertical-align: middle"
+                />Target Node
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="/images/visited.avif"
+                  height="45px"
+                  style="vertical-align: middle"
+                />Visited Node
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="/images/unvisited.jpg"
+                  height="55px"
+                  style="vertical-align: middle"
+                />Unvisited Node
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="/images/shortest_node.png"
+                  height="45px"
+                  style="vertical-align: middle"
+                />Shortest Path Node
+              </p>
+            </li>
+            <li>
+              <p>
+                <img
+                  src="/images/wall.png"
+                  height="45px"
+                  style="vertical-align: middle"
+                />Wall Node
+              </p>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <button id="wtBtn" class="btn-pink">ᗩᗪᗪ ᗯEIGᕼTS</button>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <!-- ******************************************************************************************** -->
+
+      <Section-1>
+        <div class="main_box">
+          <div class="left_box">
+            <div class="grid"></div>
+          </div>
+
+          <div class="right_box">
+            <div class="algo">
+              <div>
+                <h2 style="text-align: center">SEᒪEᑕT <br />ᗩᒪGOᖇITᕼᗰ:</h2>
+              </div>
+              <div>
+                <select
+                  name="algorithm"
+                  id="algo_menu"
+                  onchange="update_algo(); update_implementation();"
+                >
+                  <option value="Dijkastra">DijKastra Algorithm</option>
+                  <option value="A*">A* Algorithm</option>
+                  <option value="Depth First">Depth First Algorithm</option>
+                  <option value="Breadth First">Breadth First Algorithm</option>
+                </select>
+              </div>
+              <div id="explain">
+                <p id="content">
+                  Complexity:
+                  <span style="color: rgb(60, 157, 242); font-weight: bold"
+                    >0( V+E )</span
+                  ><br />
+                  Dijkstra's algorithm is a single-source shortest path
+                  algorithm used to find the shortest paths from a starting node
+                  to all other nodes in a weighted graph
+                </p>
+              </div>
+              <div>
+                <button class="btn-pink" id="visualize">ᐯISᑌᗩᒪIᘔE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section-1>
+
+      <!-- ******************************************************************************************** -->
+      <Section-2>
+        <div class="im_box">
+          <div class="implementation">
+            <h1>IᗰᑭᒪEᗰEᑎTᗩTIOᑎS</h1>
+            <div class="c_block block">
+              <div class="logo"><img src="/images/C.svg" height="60px" /></div>
+              <div class="c_code code"></div>
+            </div>
+            <div class="cpp_block block">
+              <div class="logo">
+                <img src="/images/cpp.png" height="60px" />
+              </div>
+              <div class="cpp_code code"></div>
+            </div>
+            <div class="js_block block">
+              <div class="logo">
+                <img src="/images/js.webp" height="60px" />
+              </div>
+              <div class="js_code code"></div>
+            </div>
+            <div class="py_block block">
+              <div class="logo">
+                <img src="/images/python.webp" height="60px" />
+              </div>
+              <div class="py_code code"></div>
+            </div>
+          </div>
+        </div>
+      </Section-2>
+
+      <!-- ******************************************************************************************** -->
+      <footer>
+        <div class="last_box">
+          <div><img src="/images/github.png" height="120px" /></div>
+          <div id="contact">Contact Me</div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ******************************************************************************************** -->
+    <script src="/script/script.js"></script>
+    <script src="/script/implementation.js"></script>
+  </body>
+</html>
